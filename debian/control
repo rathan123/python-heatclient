@@ -1,0 +1,64 @@
+Source: python-heatclient
+Section: python
+Priority: optional
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+XSBC-Original-Maintainer: PKG OpenStack <openstack-devel@lists.alioth.debian.org>
+Uploaders:
+ Thomas Goirand <zigo@debian.org>,
+ Prach Pongpanich <prachpub@gmail.com>,
+ Julien Danjou <acid@debian.org>,
+ Ghe Rivero <ghe.rivero@stackops.com>
+Build-Depends: debhelper (>= 9), python-all (>= 2.6.6-3~)
+Build-Depends-Indep:
+ lsb-release,
+ python-babel,
+ python-coverage,
+ python-fixtures,
+ python-iso8601 (>= 0.1.9),
+ python-keystoneclient (>= 1:1.1.0),
+ python-mock,
+ python-mox3,
+ python-oslotest (>= 1.2.0),
+ python-sphinx,
+ python-oslo-i18n (>= 1.3.0),
+ python-oslo-serialization (>= 1.2.0),
+ python-oslo-utils (>= 1.2.0),
+ python-pbr (>= 0.6),
+ python-prettytable (>= 0.5),
+ python-requests (>= 1.1),
+ python-requests-mock,
+ python-setuptools (>= 0.6.24),
+ python-six (>= 1.9.0),
+ python-testscenarios,
+ python-testtools,
+ python-yaml (>= 3.1.0),
+ testrepository
+Standards-Version: 3.9.6
+Vcs-Browser: http://bazaar.launchpad.net/~ubuntu-server-dev/python-heatclient/kilo/files
+Vcs-Bzr: https://code.launchpad.net/~ubuntu-server-dev/python-heatclient/kilo
+
+Package: python-heatclient
+Architecture: all
+Pre-Depends: dpkg (>= 1.15.6~)
+Depends:
+ python-babel (>= 1.3),
+ python-iso8601 (>= 0.1.9),
+ python-keystoneclient (>= 1:1.1.0),
+ python-oslo-i18n (>= 1.3.0),
+ python-oslo-serialization (>= 1.2.0),
+ python-oslo.utils (>= 1.2.0),
+ python-prettytable (>= 0.7),
+ python-requests,
+ python-six (>= 1.9.0),
+ python-yaml (>= 3.1.0),
+ ${misc:Depends},
+ ${python:Depends},
+ ${wheezy-added-deps}
+Description: client library and CLI for OpenStack Heat
+ Heat is a service to orchestrate multiple composite cloud applications
+ using templates, through both an OpenStack-native ReST API and
+ a CloudFormation-compatible Query API.
+ .
+ This is a client for the OpenStack Heat API. There's a Python API (the
+ heatclient module), and a command-line script (heat). Each implements 100% of
+ the OpenStack Heat API.
